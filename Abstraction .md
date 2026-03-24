@@ -29,40 +29,49 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
 ---
 
 ## 💻 Program
-```
-from abc import ABC, abstractmethod
-import math
 
-class Shape(ABC):
-    @abstractmethod
-    def calculate_area(self):
+```
+from abc import ABC
+class type_shape(ABC): 
+    def area(self):
         pass
 
-class Rectangle(Shape):
-    def __init__(self, length=5, breadth=10):
-        self.length = length
-        self.breadth = breadth
-    def calculate_area(self):
+class Rectangle(type_shape):
+    length = 6
+    breadth = 4
+    def area(self):
         return self.length * self.breadth
 
-class Circle(Shape):
-    def __init__(self, radius=7):
-        self.radius = radius
-    def calculate_area(self):
-        return math.pi * self.radius**2
+class Circle(type_shape):
+    radius = 7
+    def area(self):
+        return 3.14*self.radius**2
+class Square(type_shape):
+    length = 4
+    def area(self):
+        return self.length**2
 
-rect = Rectangle()
-circ = Circle()
-
-print("Output:")
-print("Rectangle area:", rect.calculate_area())
-print("Circle area:", circ.calculate_area())
-
-Result = (rect.calculate_area(), circ.calculate_area())
+class triangle(type_shape):
+    length = 5
+    width = 4
+    def area(self):
+        return 0.5*self.length*self.width
+  
+r = Rectangle()
+c = Circle() 
+s = Square() 
+t = triangle() 
+print("Area of a rectangle:", r.area())
+print("Area of a circle:", c.area()) 
+print("Area of a square:", s.area()) 
+print("Area of a triangle:", t.area()) 
 ```
 
 ## Output
-<img width="515" height="118" alt="image" src="https://github.com/user-attachments/assets/8b1830e1-42d7-41eb-8a5c-908474788495" />
+
+![image](https://github.com/user-attachments/assets/4e7bad86-f405-4319-a2d7-41411c477e07)
 
 ## Result
-Thus the program is run successfully
+
+Thus the program to create an **abstract class** named `Shape` with an **abstract method** `calculate_area`, and implement this method in two subclasses: `Rectangle` and `Circle` is executed successfully.
+
